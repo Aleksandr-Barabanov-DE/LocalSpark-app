@@ -75,6 +75,8 @@ h2 {
 
 .rating-button:hover {
   background-color: var(--color-shadow);
+  scale: 1.15;
+  transition: all 0.3s ease-in-out;
 }
 .rating-buttons-container button:nth-child(1) {
   background-color: var(--color-rating-1);
