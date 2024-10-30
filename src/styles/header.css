@@ -67,6 +67,17 @@ input::placeholder {
   text-transform: uppercase;
   font-family: var(--main-text);
   border: none;
+  transition: var(--button-transitions);
+}
+
+.header-button:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-light);
+}
+
+.header-button:hover:active {
+  scale: 0.95;
+  transition: all 0.1s ease;
 }
 
 @media (max-width: 650px) {

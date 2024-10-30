@@ -32,6 +32,11 @@
   flex-direction: column;
   gap: var(--gap-small);
   cursor: pointer;
+  transition: var(--button-transitions);
+}
+
+.top-city:hover {
+  scale: 1.1;
 }
 
 .top-city-preview {

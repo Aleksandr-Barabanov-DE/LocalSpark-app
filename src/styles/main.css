@@ -76,8 +76,15 @@ h2 {
 .rating-button:hover {
   background-color: var(--color-shadow);
   scale: 1.15;
-  transition: all 0.3s ease-in-out;
+  transition: var(--button-transitions);
+  border: 2px solid goldenrod;
 }
+
+.rating-button:hover:active {
+  border: 2px solid gold;
+  transition: all 0.1s ease;
+}
+
 .rating-buttons-container button:nth-child(1) {
   background-color: var(--color-rating-1);
 }
@@ -131,6 +138,19 @@ button {
   padding: var(--gap-small);
   color: var(--color-light);
   background-color: var(--color-accent);
+  transition: var(--button-transitions);
+}
+
+.navigation-button:hover,
+.review-section-button:hover {
+  background-color: var(--color-secondary);
+}
+
+.navigation-button:hover:active,
+.review-section-button:hover:active {
+  scale: 0.98;
+  background-color: var(--color-accent);
+  transition: all 0.1s ease;
 }
 
 @media (max-width: 750px) {
