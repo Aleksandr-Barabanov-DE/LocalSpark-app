@@ -20,6 +20,7 @@ export default function ReviewModal({ isOpen, onClose, onSubmit }) {
     onSubmit(reviewText);
     setReviewText("");
     onClose();
+    setReviewText("");
   };
 
   if (!isOpen) return null; // Если модальное окно закрыто, ничего не отображаем
