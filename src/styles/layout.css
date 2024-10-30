@@ -1,0 +1,22 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-extra-large);
+  min-height: 100dvh;
+  background-image: url(../images/elegant_wavy_background.jpg);
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+  padding: 5px 20px;
+}
+
+@media (max-width: 400px) {
+  .app-wrapper {
+    padding: 2px;
+  }
+}

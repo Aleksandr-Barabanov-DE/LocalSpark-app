@@ -1,0 +1,30 @@
+.review-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--gap-small);
+  padding: var(--gap-small);
+}
+
+.review-section-title {
+  font-size: var(--font-size-review-title);
+  text-shadow: var(--text-shadow);
+}
+
+.review-section-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-medium);
+  list-style-type: none;
+}
+
+.review-section-item {
+  font-size: var(--font-size-review-item);
+  font-family: var(--accented-text);
+}
+
+.review-section-button {
+  max-width: 150px;
+  border-radius: var(--border-radius-medium);
+  padding: var(--gap-small);
+}

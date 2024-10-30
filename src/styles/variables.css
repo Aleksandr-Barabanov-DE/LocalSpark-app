@@ -1,0 +1,52 @@
+:root {
+  /* Fonts */
+  --main-text: "New Amsterdam", sans-serif;
+  --accented-text: "Protest Strike", serif;
+
+  /* Colors */
+  --color-primary: #778899;
+  --color-secondary: #1a2427;
+  --color-accent: #778899;
+  --color-light: aliceblue;
+  --color-shadow: #bdbdbd;
+  --color-total-rating: rgb(177, 8, 8);
+  --color-rating-1: rgb(252, 6, 6);
+  --color-rating-2: rgb(255, 123, 0);
+  --color-rating-3: rgb(255, 221, 0);
+  --color-rating-4: rgb(41, 152, 39);
+  --color-rating-5: rgb(1, 255, 56);
+
+  /* Sizes */
+  --font-size-title: 60px;
+  --font-size-main-item: 35px;
+  --font-size-review-title: 30px;
+  --font-size-review-item: 20px;
+  --font-size-city-name: 25px;
+  --font-size-city-rating: 18px;
+  --font-size-header-button: 18px;
+  --font-size-input-placeholder: 16px;
+
+  /* Gaps */
+  --gap-small: 10px;
+  --gap-medium: 20px;
+  --gap-large: 30px;
+  --gap-extra-large: 2vh;
+
+  /* Border Radius */
+  --border-radius-small: 5px;
+  --border-radius-medium: 10px;
+  --border-radius-large: 2%;
+
+  /* Shadows */
+  --text-shadow: -3px 3px 3px var(--color-shadow);
+
+  /* Dimensions */
+  --header-height: 10dvh;
+  --input-max-width: 300px;
+  --input-max-width-mobile: 250px;
+  --main-item-min-width: 60dvw;
+  --main-item-picture-width: 300px;
+  --main-item-picture-height: 400px;
+  --top-city-preview-width: 300px;
+  --top-city-preview-height: 250px;
+}

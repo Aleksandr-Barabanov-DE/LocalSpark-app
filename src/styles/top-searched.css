@@ -1,0 +1,65 @@
+.top-searched-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--gap-small);
+  min-width: var(--main-item-min-width);
+  margin-bottom: 100px;
+  background-color: rgba(212, 213, 214, 0.548);
+  border-radius: 20px;
+  padding: 20px 0px;
+}
+
+.top-searched-cities-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  list-style-type: none;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.top-searched-section-title {
+  font-size: var(--font-size-main-item);
+  font-family: var(--main-text);
+  text-shadow: var(--text-shadow);
+}
+
+.top-city {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-small);
+  cursor: pointer;
+}
+
+.top-city-preview {
+  max-width: var(--top-city-preview-width);
+  height: var(--top-city-preview-height);
+  border-radius: var(--border-radius-large);
+  object-fit: cover;
+}
+
+.top-city-name {
+  font-size: var(--font-size-city-name);
+  text-align: center;
+  color: var(--color-total-rating);
+  text-shadow: var(--text-shadow);
+}
+
+.top-city-rating {
+  font-size: var(--font-size-city-rating);
+  text-transform: uppercase;
+  font-family: var(--accented-text);
+}
+
+.top-city-rating-number {
+  font-size: 20px;
+}
+
+@media (max-width: 600px) {
+  .top-searched-cities-container {
+    gap: 20px;
+  }
+}
