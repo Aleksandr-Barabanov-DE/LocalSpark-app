@@ -16,7 +16,7 @@ export default function Reviews({
               "{comment.text}"
               {comment.userId === currentUserId && (
                 <button
-                  className="review-section-button"
+                  className="review-section-button delete-button"
                   onClick={() => deleteReview(comment.userId)}
                 >
                   Delete

@@ -19,6 +19,9 @@
 }
 
 .review-section-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: var(--font-size-review-item);
   font-family: var(--accented-text);
 }
@@ -27,4 +30,8 @@
   max-width: 150px;
   border-radius: var(--border-radius-medium);
   padding: var(--gap-small);
+}
+
+.delete-button {
+  background-color: var(--color-total-rating);
 }

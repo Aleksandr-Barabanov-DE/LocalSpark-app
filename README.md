@@ -59,7 +59,7 @@ Here are example of the cities included in the project:
 
 1. Clone the repository:
 
-   [git clone https://github.com/your-username/todo-list.git](https://github.com/Aleksandr-Barabanov-DE/ToDo-List-React-GSAP.git)
+[git clone https://github.com/your-username/LocalSpark-app.git](https://github.com/Aleksandr-Barabanov-DE/LocalSpark-app.git)
 
 ## Navigate to the Project Directory
 
