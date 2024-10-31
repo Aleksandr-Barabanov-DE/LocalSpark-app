@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef, useLayoutEffect } from "react";
+import gsap from "gsap";
 
 export default function Reviews({
   comments,
@@ -6,9 +7,19 @@ export default function Reviews({
   deleteReview,
   currentUserId,
 }) {
+  const reviewSection = useRef();
+
+  useLayoutEffect(() => {
+    gsap.fromTo(
+      reviewSection.current,
+      { x: -20, opacity: 0 }, // Начальное состояние
+      { x: 0, opacity: 1, delay: 0.5, duration: 1 } // Конечное состояние
+    );
+  }, []);
+
   return (
     <div>
-      <section className="review-section">
+      <section ref={reviewSection} className="review-section">
         <h4 className="review-section-title">City Reviews:</h4>
         <ul className="review-section-list">
           {comments.map((comment, index) => (

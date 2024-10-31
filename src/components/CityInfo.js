@@ -11,6 +11,7 @@ export default function CityInfo({
 }) {
   const objMainCity = useRef();
   const ratingButtons = useRef([]); // Array for multiple buttons
+  const currentRating = useRef();
 
   useLayoutEffect(() => {
     gsap.fromTo(
@@ -23,6 +24,11 @@ export default function CityInfo({
       { opacity: 0, y: 20 }, // Start state for each button
       { opacity: 1, y: 0, delay: 0.5, duration: 0.3, stagger: 0.2 } // Apply stagger effect
     );
+    gsap.fromTo(
+      currentRating.current,
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1 }
+    );
   }, []);
 
   return (
@@ -30,7 +36,7 @@ export default function CityInfo({
       <div className="main-item-left-section">
         <h2 className="main-item-name">City: {cityName}</h2>
         <img className="main-item-picture" src={cityPicture} alt={cityName} />
-        <h2>
+        <h2 ref={currentRating}>
           Average rating: <span>{averageRating}</span>
         </h2>
       </div>
