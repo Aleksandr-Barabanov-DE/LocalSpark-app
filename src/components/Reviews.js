@@ -12,8 +12,8 @@ export default function Reviews({
   useLayoutEffect(() => {
     gsap.fromTo(
       reviewSection.current,
-      { x: -20, opacity: 0 }, // Начальное состояние
-      { x: 0, opacity: 1, delay: 0.5, duration: 1 } // Конечное состояние
+      { x: -20, opacity: 0 },
+      { x: 0, opacity: 1, delay: 0.5, duration: 1 }
     );
   }, []);
 
