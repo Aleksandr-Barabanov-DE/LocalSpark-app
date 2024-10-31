@@ -14,13 +14,13 @@ function Header({
   useLayoutEffect(() => {
     gsap.fromTo(
       headerTitle.current,
-      { x: 0, opacity: 0 },
-      { x: 60, opacity: 1, duration: 1 }
+      { x: 60, opacity: 0 },
+      { x: 0, opacity: 1, duration: 1 }
     );
     gsap.fromTo(
       headerInput.current,
-      { x: 0, opacity: 0 },
-      { x: -60, opacity: 1, duration: 1 }
+      { x: -60, opacity: 0 },
+      { x: 0, opacity: 1, duration: 1 }
     );
   }, []);
 
