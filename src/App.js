@@ -43,7 +43,6 @@ function App() {
         ...prevRatings,
         { rating: num, userId: currentUserId },
       ];
-      // Обновляем массив cities для текущего города
       cities[currentCityIndex].ratings = updatedRatings;
 
       return updatedRatings;
