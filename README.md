@@ -9,11 +9,16 @@ This App component allows users to view city details, navigate between cities, r
 ## Key Functionalities
 
 1. City Navigation: Users can navigate through cities, viewing each city’s name, description, image, average rating, and reviews.
-2. City Rating: Users can submit a rating (1-5), updating the average rating in real-time.
-3. Reviews: Users can add and delete their own reviews. Only reviews from the current user (currentUserId) are deletable.
-4. City Search: Users can search for cities by name using an input field.
-5. Real-time Updates: The UI updates automatically as users interact (e.g., when switching cities or adding ratings).
-6. Selecting a City from the "Top Searched Cities" List: Users can select a city from the "Top Searched Cities" list, allowing for quick display of its details on the main page. The App component passes the setCurrentCityIndex function to TopSearched, where it is called upon clicking a city, updating the index. This synchronizes data between components and automatically refreshes information about the selected city, including its name, image, and description.
+
+2. City Rating: Users can submit a rating (1-5) for a city. The application checks whether the user has already rated the city based on their currentUserId. If they have, their previous rating is updated; if not, a new rating is added, updating the average rating in real-time.
+
+3. Reviews: Users can add and delete their own reviews. Only reviews from the current user (identified by currentUserId) are deletable, ensuring that users can manage their own contributions without affecting others.
+
+4. City Search: Users can search for cities by name using an input field, making it easier to find specific cities quickly.
+
+5. Real-time Updates: The UI updates automatically as users interact with the application (e.g., when switching cities or adding ratings), providing an immediate feedback experience.
+
+6. Selecting a City from the "Top Searched Cities" List: Users can select a city from the "Top Searched Cities" list. Clicking a city updates the index through the setCurrentCityIndex function, which is passed from the App component to the TopSearched component. This synchronizes data between components, automatically refreshing information about the selected city, including its name, image, and description.
 
 ## Technologies
 
