@@ -35,7 +35,7 @@ function App() {
 
       // If the user has already rated, return the previous ratings unchanged
       if (userHasRated) {
-        alert("you have already rated");
+        alert("You have already rated this city");
         return prevRatings;
       }
 
