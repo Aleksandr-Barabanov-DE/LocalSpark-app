@@ -25,22 +25,36 @@ function App() {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
+  // Ratings Section...........................................................
   const addRating = (num, currentUserId) => {
-    setRatings((prevRatings) => [
-      ...prevRatings,
-      { rating: num, userId: currentUserId },
-    ]);
+    setRatings((prevRatings) => {
+      // Check if the user has already rated
+      const userHasRated = prevRatings.some(
+        (rating) => rating.userId === currentUserId
+      );
+
+      // If the user has already rated, return the previous ratings unchanged
+      if (userHasRated) {
+        alert("you have already rated");
+        return prevRatings;
+      }
+
+      // If the user has not rated, add the new rating
+      return [...prevRatings, { rating: num, userId: currentUserId }];
+    });
   };
 
   useEffect(() => {
     // Accessing ratings array directly and mapping to retrieve rating values
     const currentArrRating = ratings.map((item) => item.rating);
+
     const total = currentArrRating.reduce((acc, num) => acc + num, 0);
     const shownRating =
       currentArrRating.length > 0 ? total / currentArrRating.length : 0;
     setAverageRating(shownRating.toFixed(2));
   }, [ratings]);
 
+  // Navigation................................................................
   const nextCity = () => {
     setCurrentCityIndex((prevIndex) => (prevIndex + 1) % cities.length);
   };
@@ -51,6 +65,7 @@ function App() {
     );
   };
 
+  // Reviews...................................................................
   const addReview = (reviewText) => {
     const newComment = { userId: currentUserId, text: reviewText };
     setComments((prevComments) => [...prevComments, newComment]);
@@ -62,6 +77,7 @@ function App() {
     );
   };
 
+  // Input + Find..............................................................
   const onChangeEvent = (event) => {
     setInputValue(event);
   };
@@ -84,6 +100,7 @@ function App() {
     }
   };
 
+  // Cities Rendering.........................................................
   useEffect(() => {
     const newCity = cities[currentCityIndex];
     setCityName(newCity.name);
