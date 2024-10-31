@@ -21,7 +21,6 @@ export default function CityInfo({
         <p className="main-item-description">{description}</p>
         <div className="main-item-rating-section">
           <h4>You can rate this city:</h4>
-          {/* Кнопки для оценки */}
           <div className="rating-buttons-container">
             {[1, 2, 3, 4, 5].map((num) => (
               <button

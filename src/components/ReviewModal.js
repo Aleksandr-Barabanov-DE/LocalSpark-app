@@ -30,7 +30,6 @@ export default function ReviewModal({ isOpen, onClose, onSubmit }) {
       <div className="modal-content">
         <h2>Add a Review</h2>
         {error && <p className="error-message">{error}</p>}{" "}
-        {/* Сообщение об ошибке */}
         <textarea
           value={reviewText}
           onChange={handleInputChange}

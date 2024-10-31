@@ -137,7 +137,7 @@ function App() {
           <NavigationButtons previousCity={previousCity} nextCity={nextCity} />
           <Reviews
             comments={comments}
-            addReview={openModal} // Открытие модального окна
+            addReview={openModal}
             deleteReview={deleteReview}
             currentUserId={currentUserId}
           />
