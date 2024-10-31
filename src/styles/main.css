@@ -13,6 +13,7 @@
   justify-content: center;
   align-items: center;
   gap: var(--gap-small);
+  padding: var(--gap-small);
 }
 
 .main-item-name {
@@ -123,6 +124,7 @@ span {
   width: 100%;
   gap: var(--gap-large);
   width: 300px;
+  padding: var(--gap-small);
 }
 
 button {
@@ -178,5 +180,12 @@ button {
   }
   .main-item-picture {
     max-width: 300px;
+  }
+  .app-main-item {
+    padding: 0;
+  }
+
+  .main-item-wrapper {
+    padding: 0;
   }
 }
