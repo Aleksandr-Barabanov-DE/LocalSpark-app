@@ -3,12 +3,12 @@ import "../styles/review-modal.css";
 
 export default function ReviewModal({ isOpen, onClose, onSubmit }) {
   const [reviewText, setReviewText] = useState("");
-  const [error, setError] = useState(""); // состояние для ошибки
+  const [error, setError] = useState("");
 
   const handleInputChange = (e) => {
     setReviewText(e.target.value);
     if (e.target.value.length >= 20) {
-      setError(""); // очищаем ошибку, если текст соответствует минимальной длине
+      setError("");
     }
   };
 
@@ -23,7 +23,7 @@ export default function ReviewModal({ isOpen, onClose, onSubmit }) {
     setReviewText("");
   };
 
-  if (!isOpen) return null; // Если модальное окно закрыто, ничего не отображаем
+  if (!isOpen) return null;
 
   return (
     <div className="modal-overlay">

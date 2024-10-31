@@ -25,14 +25,20 @@ function App() {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
-  const addRating = (num) => {
-    setRatings((prevRatings) => [...prevRatings, num]);
+  const addRating = (num, currentUserId) => {
+    setRatings((prevRatings) => [
+      ...prevRatings,
+      { rating: num, userId: currentUserId },
+    ]);
   };
 
   useEffect(() => {
-    const total = ratings.reduce((acc, num) => acc + num, 0);
-    const rating = total / ratings.length || 0;
-    setAverageRating(rating.toFixed(2));
+    // Accessing ratings array directly and mapping to retrieve rating values
+    const currentArrRating = ratings.map((item) => item.rating);
+    const total = currentArrRating.reduce((acc, num) => acc + num, 0);
+    const shownRating =
+      currentArrRating.length > 0 ? total / currentArrRating.length : 0;
+    setAverageRating(shownRating.toFixed(2));
   }, [ratings]);
 
   const nextCity = () => {

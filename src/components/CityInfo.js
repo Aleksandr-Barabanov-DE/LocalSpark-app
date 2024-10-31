@@ -6,6 +6,7 @@ export default function CityInfo({
   averageRating,
   description,
   addRating,
+  currentUserId,
 }) {
   return (
     <div className="main-item-wrapper">
@@ -26,7 +27,7 @@ export default function CityInfo({
               <button
                 className="rating-button"
                 key={num}
-                onClick={() => addRating(num)}
+                onClick={() => addRating(num, currentUserId)}
               >
                 {num}
               </button>

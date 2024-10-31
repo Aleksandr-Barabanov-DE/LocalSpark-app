@@ -2,7 +2,14 @@ export const cities = [
   {
     id: 1,
     name: "New York",
-    ratings: [5, 4, 4, 5, 5],
+    ratings: [
+      { userId: "ghdprnv34m5", rating: 5 },
+      { userId: "mkhty8vcs9p", rating: 4 },
+      { userId: "ufztrnv75qx", rating: 4 },
+      { userId: "qwrfgh13jkl", rating: 5 },
+      { userId: "xlrfznp54ck", rating: 5 },
+    ],
+
     reviews: [
       {
         id: "1",
@@ -28,7 +35,13 @@ export const cities = [
   {
     id: 2,
     name: "Los Angeles",
-    ratings: [4, 3, 4, 4, 5],
+    ratings: [
+      { userId: "vczmkp85yrt", rating: 4 },
+      { userId: "opdfgy7bvc1", rating: 3 },
+      { userId: "mnghy5vwr4p", rating: 4 },
+      { userId: "tyrhnl39eqp", rating: 4 },
+      { userId: "jyt56qw1pmv", rating: 5 },
+    ],
     reviews: [
       {
         id: "4",
@@ -54,7 +67,13 @@ export const cities = [
   {
     id: 3,
     name: "Chicago",
-    ratings: [3, 4, 5, 3, 4],
+    ratings: [
+      { userId: "qwzlk1yop2n", rating: 4 },
+      { userId: "pjk9vbn8ltr", rating: 5 },
+      { userId: "mhgyrf8vwzp", rating: 3 },
+      { userId: "nbvl67ypqom", rating: 4 },
+      { userId: "cfvk52owztr", rating: 4 },
+    ],
     reviews: [
       {
         id: "7",
@@ -80,7 +99,13 @@ export const cities = [
   {
     id: 4,
     name: "Miami",
-    ratings: [5, 5, 4, 5, 4],
+    ratings: [
+      { userId: "rtgvb6yw7lp", rating: 5 },
+      { userId: "plmv90yj5tk", rating: 4 },
+      { userId: "mktyvb74loq", rating: 3 },
+      { userId: "onlz64pw9kq", rating: 5 },
+      { userId: "vbn53oklj7p", rating: 5 },
+    ],
     reviews: [
       {
         id: "10",
@@ -106,7 +131,14 @@ export const cities = [
   {
     id: 5,
     name: "San Francisco",
-    ratings: [4, 5, 5, 4, 5],
+    ratings: [
+      { userId: "qrtbv64opj2", rating: 4 },
+      { userId: "lzp8whytvm5", rating: 5 },
+      { userId: "bvnk1y72rlo", rating: 3 },
+      { userId: "vxptm92qkwo", rating: 4 },
+      { userId: "oklm5wtzvnp", rating: 4 },
+    ],
+
     reviews: [
       {
         id: "13",
@@ -132,7 +164,13 @@ export const cities = [
   {
     id: 6,
     name: "Houston",
-    ratings: [4, 4, 3, 4, 4],
+    ratings: [
+      { userId: "lqrt4bvk2oj", rating: 3 },
+      { userId: "wlkprt7bvzo", rating: 5 },
+      { userId: "pvn3lk9tyoj", rating: 4 },
+      { userId: "yvw2pk6jro9", rating: 4 },
+      { userId: "opkl3tzb4ny", rating: 5 },
+    ],
     reviews: [
       {
         id: "16",
@@ -158,7 +196,13 @@ export const cities = [
   {
     id: 7,
     name: "Phoenix",
-    ratings: [4, 4, 5, 5, 4],
+    ratings: [
+      { userId: "kqyb9tr5mvo", rating: 4 },
+      { userId: "xpt6vb2orjk", rating: 3 },
+      { userId: "mplr5wn2tz8", rating: 4 },
+      { userId: "wvot6r3plkj", rating: 5 },
+      { userId: "qtbv8l3ymno", rating: 3 },
+    ],
     reviews: [
       {
         id: "19",
@@ -184,7 +228,13 @@ export const cities = [
   {
     id: 8,
     name: "Philadelphia",
-    ratings: [4, 5, 5, 4, 3],
+    ratings: [
+      { userId: "xvt9pl2wrbk", rating: 5 },
+      { userId: "ltz1npk4jyo", rating: 5 },
+      { userId: "zrkv5otjl8w", rating: 4 },
+      { userId: "vbpo9wm3yrl", rating: 4 },
+      { userId: "tklv8opr2wn", rating: 3 },
+    ],
     reviews: [
       {
         id: "22",
@@ -210,7 +260,13 @@ export const cities = [
   {
     id: 9,
     name: "San Diego",
-    ratings: [5, 5, 4, 5, 4],
+    ratings: [
+      { userId: "qtwp5bl8yro", rating: 4 },
+      { userId: "lrpo6yvwz3t", rating: 5 },
+      { userId: "bxmnv7tp4ol", rating: 5 },
+      { userId: "vnzr1pt8wo2", rating: 4 },
+      { userId: "ylko4vztpj9", rating: 5 },
+    ],
     reviews: [
       {
         id: "25",
@@ -236,7 +292,13 @@ export const cities = [
   {
     id: 10,
     name: "Dallas",
-    ratings: [4, 4, 4, 5, 5],
+    ratings: [
+      { userId: "nml8rtv4opj", rating: 3 },
+      { userId: "zrt2v3ypl9m", rating: 4 },
+      { userId: "ktpw5jyrz8b", rating: 5 },
+      { userId: "omkw4zbnpl3", rating: 3 },
+      { userId: "yvbnl2pqt5r", rating: 4 },
+    ],
     reviews: [
       {
         id: "28",
