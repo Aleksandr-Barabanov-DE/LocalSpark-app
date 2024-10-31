@@ -39,8 +39,14 @@ function App() {
         return prevRatings;
       }
 
-      // If the user has not rated, add the new rating
-      return [...prevRatings, { rating: num, userId: currentUserId }];
+      const updatedRatings = [
+        ...prevRatings,
+        { rating: num, userId: currentUserId },
+      ];
+      // Обновляем массив cities для текущего города
+      cities[currentCityIndex].ratings = updatedRatings;
+
+      return updatedRatings;
     });
   };
 
@@ -136,8 +142,10 @@ function App() {
             currentUserId={currentUserId}
           />
         </section>
-
-        <TopSearched setCurrentCityIndex={setCurrentCityIndex} />
+        <TopSearched
+          cities={cities}
+          setCurrentCityIndex={setCurrentCityIndex}
+        />
       </div>
 
       <ReviewModal
