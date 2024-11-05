@@ -1,119 +1,38 @@
 import "./App.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { cities } from "./data/data";
 import CityInfo from "./components/CityInfo";
 import NavigationButtons from "./components/NavigationButtons";
 import Reviews from "./components/Reviews";
-import TopSearched from "./components/topSearched";
+import TopSearched from "./components/TopSearched";
 import Header from "./components/Header";
 import ReviewModal from "./components/ReviewModal";
+import { useRatingLogic } from "./hooks/RatingLogic";
+import { useNavigationLogic } from "./hooks/NavigationLogic";
+import { useReviewLogic } from "./hooks/ReviewLogic";
+import { useSearchLogic } from "./hooks/SearchLogic";
 
 function App() {
   const [currentUserId] = useState("ghdtrnv34m5");
-  const [inputValue, setInputValue] = useState("");
-  const [currentCityIndex, setCurrentCityIndex] = useState(0);
+  const { currentCityIndex, nextCity, previousCity, setCurrentCityIndex } =
+    useNavigationLogic(cities);
+  const { averageRating, addRating } = useRatingLogic(
+    currentCityIndex,
+    cities,
+    currentUserId
+  );
+  const { comments, addReview, deleteReview } = useReviewLogic(
+    currentCityIndex,
+    cities,
+    currentUserId
+  );
+  const { inputValue, onChangeEvent, findTheCity, handleKeyPress } =
+    useSearchLogic(cities, setCurrentCityIndex);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const currentCity = cities[currentCityIndex];
-  const [cityName, setCityName] = useState(currentCity.name);
-  const [ratings, setRatings] = useState(currentCity.ratings);
-  const [description, setDescription] = useState(currentCity.description);
-  const [cityPicture, setCityPicture] = useState(currentCity.image);
-  const [comments, setComments] = useState(currentCity.reviews);
-  const [averageRating, setAverageRating] = useState(0);
-
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
-
-  // Ratings Section...........................................................
-  const addRating = (num, currentUserId) => {
-    setRatings((prevRatings) => {
-      // Check if the user has already rated
-      const userHasRated = prevRatings.some(
-        (rating) => rating.userId === currentUserId
-      );
-
-      // If the user has already rated, return the previous ratings unchanged
-      if (userHasRated) {
-        alert("You have already rated this city");
-        return prevRatings;
-      }
-
-      const updatedRatings = [
-        ...prevRatings,
-        { rating: num, userId: currentUserId },
-      ];
-      cities[currentCityIndex].ratings = updatedRatings;
-
-      return updatedRatings;
-    });
-  };
-
-  useEffect(() => {
-    // Accessing ratings array directly and mapping to retrieve rating values
-    const currentArrRating = ratings.map((item) => item.rating);
-
-    const total = currentArrRating.reduce((acc, num) => acc + num, 0);
-    const shownRating =
-      currentArrRating.length > 0 ? total / currentArrRating.length : 0;
-    setAverageRating(shownRating.toFixed(2));
-  }, [ratings]);
-
-  // Navigation................................................................
-  const nextCity = () => {
-    setCurrentCityIndex((prevIndex) => (prevIndex + 1) % cities.length);
-  };
-
-  const previousCity = () => {
-    setCurrentCityIndex(
-      (prevIndex) => (prevIndex - 1 + cities.length) % cities.length
-    );
-  };
-
-  // Reviews...................................................................
-  const addReview = (reviewText) => {
-    const newComment = { userId: currentUserId, text: reviewText };
-    setComments((prevComments) => [...prevComments, newComment]);
-  };
-
-  const deleteReview = (userId) => {
-    setComments((prevComments) =>
-      prevComments.filter((comment) => comment.userId !== userId)
-    );
-  };
-
-  // Input + Find..............................................................
-  const onChangeEvent = (event) => {
-    setInputValue(event);
-  };
-
-  const findTheCity = () => {
-    const foundCityIndex = cities.findIndex((city) =>
-      city.name.toLowerCase().includes(inputValue.toLowerCase())
-    );
-    if (foundCityIndex !== -1) {
-      setCurrentCityIndex(foundCityIndex);
-      setInputValue("");
-    } else {
-      alert("City not found");
-    }
-  };
-
-  const handleKeyPress = (event) => {
-    if (event.key === "Enter") {
-      findTheCity();
-    }
-  };
-
-  // Cities Rendering.........................................................
-  useEffect(() => {
-    const newCity = cities[currentCityIndex];
-    setCityName(newCity.name);
-    setRatings(newCity.ratings);
-    setDescription(newCity.description);
-    setCityPicture(newCity.image);
-    setComments(newCity.reviews);
-  }, [currentCityIndex]);
 
   return (
     <div className="app-container">
@@ -127,10 +46,10 @@ function App() {
       <div className="app-wrapper">
         <section className="app-main-item">
           <CityInfo
-            cityName={cityName}
-            cityPicture={cityPicture}
+            cityName={currentCity.name}
+            cityPicture={currentCity.image}
             averageRating={averageRating}
-            description={description}
+            description={currentCity.description}
             addRating={addRating}
           />
           <NavigationButtons previousCity={previousCity} nextCity={nextCity} />
