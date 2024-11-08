@@ -10,7 +10,7 @@ export default function CityInfo({
   currentUserId,
 }) {
   const objMainCity = useRef();
-  const ratingButtons = useRef([]); // Array for multiple buttons
+  const ratingButtons = useRef([]);
   const currentRating = useRef();
 
   useLayoutEffect(() => {
@@ -21,8 +21,8 @@ export default function CityInfo({
     );
     gsap.fromTo(
       ratingButtons.current,
-      { opacity: 0, y: 20 }, // Start state for each button
-      { opacity: 1, y: 0, delay: 0.5, duration: 0.3, stagger: 0.2 } // Apply stagger effect
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, delay: 0.5, duration: 0.3, stagger: 0.2 }
     );
     gsap.fromTo(
       currentRating.current,
@@ -47,7 +47,7 @@ export default function CityInfo({
           <div className="rating-buttons-container">
             {[1, 2, 3, 4, 5].map((num, index) => (
               <button
-                ref={(el) => (ratingButtons.current[index] = el)} // Add each button to the array
+                ref={(el) => (ratingButtons.current[index] = el)}
                 className="rating-button"
                 key={num}
                 onClick={() => addRating(num, currentUserId)}
